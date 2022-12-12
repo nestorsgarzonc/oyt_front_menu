@@ -11,23 +11,16 @@ class ProductItemCard extends StatelessWidget {
   }) : super(key: key);
 
   final resm.MenuItem menuItem;
-  final VoidCallback onTap;
+  final void Function(resm.MenuItem menuItem) onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 5,
-      ),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: ListTile(
-        onTap: onTap,
+        onTap: () => onTap(menuItem),
         enabled: menuItem.isAvaliable,
-        contentPadding: const EdgeInsets.only(
-          right: 5,
-          top: 10,
-          bottom: 10,
-        ),
+        contentPadding: const EdgeInsets.only(right: 5, top: 10, bottom: 10),
         horizontalTitleGap: 10,
         leading: ImageApi(menuItem.imgUrl, width: 100),
         title: Text(menuItem.name),
@@ -35,11 +28,7 @@ class ProductItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (menuItem.description.isNotEmpty)
-              Text(
-                menuItem.description,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
+              Text(menuItem.description, maxLines: 2, overflow: TextOverflow.ellipsis),
             const SizedBox(height: 5),
             Text(
               menuItem.isAvaliable

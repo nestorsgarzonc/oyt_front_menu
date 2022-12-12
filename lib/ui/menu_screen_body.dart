@@ -4,12 +4,13 @@ import 'package:oyt_front_menu/ui/widgets/menu_app_bar.dart';
 import 'package:oyt_front_menu/ui/widgets/product_item_card.dart';
 import 'package:oyt_front_menu/ui/widgets/toppings_carrousel_option.dart';
 import 'package:oyt_front_restaurant/models/restaurant_model.dart';
+import 'package:oyt_front_restaurant/models/restaurant_model.dart' as resm;
 
 class MenuScreenBody extends ConsumerStatefulWidget {
   const MenuScreenBody({required this.restaurantData, required this.onTapProduct, super.key});
 
   final RestaurantModel restaurantData;
-  final VoidCallback onTapProduct;
+  final void Function(resm.MenuItem menuItem) onTapProduct;
 
   @override
   ConsumerState<MenuScreenBody> createState() => _MenuScreenBodyState();
