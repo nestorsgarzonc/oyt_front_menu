@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:oyt_front_restaurant/models/restaurant_model.dart';
 import 'package:oyt_front_widgets/image/image_api_widget.dart';
 
-
 class ToppingsCarrouselOption extends StatelessWidget {
   const ToppingsCarrouselOption({
     required this.restaurantData,
