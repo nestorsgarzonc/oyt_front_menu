@@ -65,7 +65,7 @@ class CarrouselItemCard extends StatelessWidget {
             width: 100,
             height: 120,
             decoration: BoxDecoration(
-              color: isSelected ? Colors.grey : Colors.white,
+              color: isSelected ? Colors.grey : Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: isSelected ? Colors.grey : Colors.grey.shade300, width: 1),
             ),
