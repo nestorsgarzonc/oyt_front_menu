@@ -19,7 +19,7 @@ class ProductItemCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: ListTile(
         onTap: () => onTap(menuItem),
-        enabled: menuItem.isAvaliable,
+        enabled: menuItem.isAvailable,
         contentPadding: const EdgeInsets.only(right: 5, top: 10, bottom: 10),
         horizontalTitleGap: 10,
         leading: ImageApi(menuItem.imgUrl, width: 100),
@@ -31,12 +31,12 @@ class ProductItemCard extends StatelessWidget {
               Text(menuItem.description, maxLines: 2, overflow: TextOverflow.ellipsis),
             const SizedBox(height: 5),
             Text(
-              menuItem.isAvaliable
+              menuItem.isAvailable
                   ? '\$ ${CurrencyFormatter.format(menuItem.price)}'
                   : 'NO DISPONIBLE',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                color: menuItem.isAvaliable ? Colors.black : Colors.grey,
+                color: menuItem.isAvailable ? Colors.black : Colors.grey,
                 fontSize: 16,
               ),
             ),
